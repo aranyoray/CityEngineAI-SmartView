@@ -1,0 +1,44 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const fromStationDropdown = document.getElementById('fromStation');
+    const toStationDropdown = document.getElementById('toStation');
+    const searchRoutesBtn = document.getElementById('searchRoutesBtn');
+    const routeDisplay = document.getElementById('routeDisplay');
+    const routeDetailsSection = document.getElementById('routeDetails');
+
+    // Populate station names
+    const stationNames = [
+        { name: 'Attiguppe (ATGP)', kannada: 'ಅಟ್ಟಿಗುಪ್ಪೆ' },
+        { name: 'Baiyappanahalli (BYPL)', kannada: 'ಬೈಯಪ್ಪನಹಳ್ಳಿ' },
+        { name: 'Banashankari (BSK)', kannada: 'ಬನಶಂಕರಿ' },
+        { name: 'Bangalore City Station (BLCY)', kannada: 'ಬೆಂಗಳೂರು ನಗರ' },
+        { name: 'Cubbon Park (CBPK)', kannada: 'ಕಬ್ಬನ್ ಪಾರ್ಕ್' },
+        { name: 'Kempegowda (KGWA)', kannada: 'ಕಂಪೆಗೌಡ' },
+        // Add more stations based on previous lists
+    ];
+
+    function populateDropdown(dropdown) {
+        stationNames.forEach(station => {
+            const option = document.createElement('option');
+            option.value = station.name;
+            option.text = `${station.name} / ${station.kannada}`;
+            dropdown.appendChild(option);
+        });
+    }
+
+    populateDropdown(fromStationDropdown);
+    populateDropdown(toStationDropdown);
+
+    // Event listener for button click
+    searchRoutesBtn.addEventListener('click', () => {
+        const fromStation = fromStationDropdown.value;
+        const toStation = toStationDropdown.value;
+
+        if (fromStation && toStation) {
+            const routeInfo = `Route from ${fromStation} to ${toStation}`;
+            routeDisplay.innerHTML = `<h3>${routeInfo}</h3><p>Details about the route, stops, etc.</p>`;
+            routeDetailsSection.style.display = 'block';
+        } else {
+            alert('Please select both stations.');
+        }
+    });
+});
