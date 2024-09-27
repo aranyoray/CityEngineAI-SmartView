@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Peenya (PNYA)', kannada: 'ಪೀನ್ಯ' },
         { name: 'Yeshwanthpur (YSWR)', kannada: 'ಯಶವಂತಪುರ' },
         { name: 'Nagasandra (NGSD)', kannada: 'ನಾಗಸಂದ್ರ' }
-        // Add more stations as required
     ];
 
     function populateDropdown(dropdown) {
@@ -41,10 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
     searchRoutesBtn.addEventListener('click', () => {
         const fromStation = fromStationDropdown.value;
         const toStation = toStationDropdown.value;
-    
+
         console.log('From Station:', fromStation);
         console.log('To Station:', toStation);
-    
+
         if (fromStation && toStation) {
             if (fromStation === toStation) {
                 routeDisplay.innerHTML = `<h3>Invalid Selection</h3><p>Please select different stations for your route.</p>`;

@@ -35,9 +35,37 @@ function initGoogleMap() {
 
     const map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
+    function getStationCoordinates(stationName) {
+    const coordinates = {
+        'Attiguppe (AGPP)': { lat: 12.9617, lng: 77.5371 },
+        'Baiyappanahalli (BYPL)': { lat: 12.9829, lng: 77.6515 },
+        'Benniganahalli (JTPM)': { lat: 12.9976, lng: 77.6541 },
+        'Banashankari (BSNK)': { lat: 12.9257, lng: 77.5462 },
+        'Krantivira Sangolli Rayanna Railway Station (SRCS)': { lat: 12.9772, lng: 77.5701 },
+        'Challaghatta (CLGA)': { lat: 12.9356, lng: 77.4976 },
+        'Chickpete (CKPE)': { lat: 12.9633, lng: 77.5811 },
+        'Cubbon Park (CBPK)': { lat: 12.9761, lng: 77.5952 },
+        'Dasarahalli (DSH)': { lat: 13.0516, lng: 77.5162 },
+        'Deepanjali Nagar (DJNR)': { lat: 12.9452, lng: 77.5318 },
+        'Doddakallasandra (KLPK)': { lat: 12.8714, lng: 77.5483 },
+        'Garudacharapalya (GDCP)': { lat: 12.9927, lng: 77.6793 },
+        'Goraguntepalya (YPI)': { lat: 13.0307, lng: 77.5196 },
+        'Halasuru (HLRU)': { lat: 12.9768, lng: 77.6194 },
+        'Hoodi (DKIA)': { lat: 12.9953, lng: 77.7067 },
+        'Hopefarm Channasandra (UWVL)': { lat: 12.9931, lng: 77.7463 },
+        'Sri Balagangadharanatha Swamiji Station, Hosahalli (HSLI)': { lat: 12.9682, lng: 77.5198 },
+        'Indiranagar (IDN)': { lat: 12.9784, lng: 77.6404 },
+        'Jalahalli (JLHL)': { lat: 13.0311, lng: 77.5336 },
+        'Jayanagar (JYN)': { lat: 12.9261, lng: 77.5902 },
+        'Jayaprakash Nagar (JPN)': { lat: 12.9063, lng: 77.5856 },
+        'Jnanabharathi (BGUC)': { lat: 12.9502, lng: 77.5085 },
+        'Kadugodi Tree Park (KDGD)': { lat: 12.9911, lng: 77.7578 },
+        'Krishna Rajendra Market (KRMT)': { lat: 12.9611, lng: 77.5783​}}
+    };
+
     stationData.forEach(station => {
         const marker = new google.maps.Marker({
-            position: getStationCoordinates(station.name),
+            position: { lat: station.lat, lng: station.lng },
             map: map,
             title: station.name,
             icon: {
@@ -46,7 +74,7 @@ function initGoogleMap() {
         });
 
         const infoWindow = new google.maps.InfoWindow({
-            content: `<h4>${station.name}</h4><p>${station.kannada}</p><p>Line: ${station.line}</p>`
+            content: `<h4>${station.name}</h4><p>Line: ${station.line}</p>`
         });
 
         marker.addListener('click', () => {
@@ -55,7 +83,7 @@ function initGoogleMap() {
     });
 }
 
-// Dummy function to simulate coordinates for stations (replace with real data)
-function getStationCoordinates(stationName) {
-    const coordinates = {
-        'Attiguppe (AGPP)': { lat: ​⬤
+// Load the map when the DOM content is fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initMap();
+});
