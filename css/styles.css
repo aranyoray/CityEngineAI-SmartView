@@ -75,3 +75,19 @@ footer {
     background-color: white;
     border: 1px solid #ccc;
 }
+
+/* Centering content for mobile and desktop */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Style for dropdowns and button for mobile responsiveness */
+@media (max-width: 768px) {
+    select, button {
+        max-width: 300px;
+    }
+}

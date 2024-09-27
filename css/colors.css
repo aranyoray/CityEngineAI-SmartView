@@ -1,0 +1,17 @@
+/* Line colors for different metro lines */
+.purple-line {
+    background-color: #8b3a62;
+}
+
+.green-line {
+    background-color: #22b14c;
+}
+
+.interchange {
+    background-color: #f7e200;
+}
+
+/* Apply colors dynamically */
+select option {
+    background-color: white;
+}
