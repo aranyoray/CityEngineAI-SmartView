@@ -35,7 +35,7 @@ function initGoogleMap() {
 
     const map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-    function getStationCoordinates(stationName) {
+function getStationCoordinates(stationName) {
     const coordinates = {
         'Attiguppe (AGPP)': { lat: 12.9617, lng: 77.5371 },
         'Baiyappanahalli (BYPL)': { lat: 12.9829, lng: 77.6515 },
@@ -60,8 +60,17 @@ function initGoogleMap() {
         'Jayaprakash Nagar (JPN)': { lat: 12.9063, lng: 77.5856 },
         'Jnanabharathi (BGUC)': { lat: 12.9502, lng: 77.5085 },
         'Kadugodi Tree Park (KDGD)': { lat: 12.9911, lng: 77.7578 },
-        'Krishna Rajendra Market (KRMT)': { lat: 12.9611, lng: 77.5783​}}
+        'Krishna Rajendra Market (KRMT)': { lat: 12.9611, lng: 77.5783 },
+        'Krishnarajapura (KRAM)': { lat: 12.9988, lng: 77.6962 },
+        'Kengeri (KGIT)': { lat: 12.9171, lng: 77.4807 },
+        'Kengeri Bus Terminal (MLSD)': { lat: 12.9137, lng: 77.4872 },
+        'Konanakunte Cross (APRC)': { lat: 12.8693, lng: 77.5552 },
+        'Kundalahalli (KDNH)': { lat: 12.9652, lng: 77.7271 },
+        'Lalbagh (LBGH)': { lat: 12.9494, lng: 77.5849 },
+        'Magadi Road (MIRD)': { lat: 12.9782, lng: 77.5412 }
     };
+    return coordinates[stationName];
+}
 
     stationData.forEach(station => {
         const marker = new google.maps.Marker({
