@@ -13,7 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Bangalore City Station (BLCY)', kannada: 'ಬೆಂಗಳೂರು ನಗರ' },
         { name: 'Cubbon Park (CBPK)', kannada: 'ಕಬ್ಬನ್ ಪಾರ್ಕ್' },
         { name: 'Kempegowda (KGWA)', kannada: 'ಕಂಪೆಗೌಡ' },
-        // Add more stations based on previous lists
+        { name: 'Mysuru Road (MRRD)', kannada: 'ಮೈಸೂರು ರಸ್ತೆ' },
+        { name: 'Indiranagar (INDN)', kannada: 'ಇಂದಿರಾನಗರ' },
+        { name: 'Trinity (TNTY)', kannada: 'ಟ್ರಿನಿಟಿ' },
+        { name: 'Vijayanagar (VJNG)', kannada: 'ವಿಜಯನಗರ' },
+        { name: 'Mahalakshmi (MLKM)', kannada: 'ಮಹಾಲಕ್ಷ್ಮಿ' },
+        { name: 'Rajajinagar (RJNG)', kannada: 'ರಾಜಾಜಿನಗರ' },
+        { name: 'Peenya (PNYA)', kannada: 'ಪೀನ್ಯ' },
+        { name: 'Yeshwanthpur (YSWR)', kannada: 'ಯಶವಂತಪುರ' },
+        { name: 'Nagasandra (NGSD)', kannada: 'ನಾಗಸಂದ್ರ' }
+        // Add more stations as required
     ];
 
     function populateDropdown(dropdown) {
@@ -49,3 +58,4 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Please select both stations.');
         }
     });
+});
