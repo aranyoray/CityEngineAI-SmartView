@@ -91,3 +91,7 @@ footer {
         max-width: 300px;
     }
 }
+
+#routeDetails {
+    display: block !important;
+}

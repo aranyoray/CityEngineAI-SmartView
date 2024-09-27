@@ -32,13 +32,20 @@ document.addEventListener('DOMContentLoaded', () => {
     searchRoutesBtn.addEventListener('click', () => {
         const fromStation = fromStationDropdown.value;
         const toStation = toStationDropdown.value;
-
+    
+        console.log('From Station:', fromStation);
+        console.log('To Station:', toStation);
+    
         if (fromStation && toStation) {
-            const routeInfo = `Route from ${fromStation} to ${toStation}`;
-            routeDisplay.innerHTML = `<h3>${routeInfo}</h3><p>Details about the route, stops, etc.</p>`;
-            routeDetailsSection.style.display = 'block';
+            if (fromStation === toStation) {
+                routeDisplay.innerHTML = `<h3>Invalid Selection</h3><p>Please select different stations for your route.</p>`;
+            } else {
+                const routeInfo = `Route from ${fromStation} to ${toStation}`;
+                console.log('Route Info:', routeInfo);
+                routeDisplay.innerHTML = `<h3>${routeInfo}</h3><p>Details about the route, stops, etc.</p>`;
+                routeDetailsSection.style.display = 'block';
+            }
         } else {
             alert('Please select both stations.');
         }
     });
-});
