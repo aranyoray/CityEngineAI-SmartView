@@ -1,0 +1,503 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.3",
+    "title": "Smart View City Mobile App API",
+    "description": "RESTful API to link with Smart View City Mobile Application"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "schemes": ["http"],
+  "paths": {
+    "/users": {
+      "post": {
+        "description": "Add a new officer user to the database",
+        "tags": ["Users"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                },
+                "email_address": {
+                  "example": "any"
+                },
+                "name": {
+                  "example": "any"
+                },
+                "phone_number": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                },
+                "salt": {
+                  "example": "any"
+                },
+                "is_admin": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/allusers": {
+      "get": {
+        "description": "Get all users",
+        "tags": ["Users"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/users/{username}": {
+      "get": {
+        "description": "Find user based on username",
+        "tags": ["Users"],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete a officer user",
+        "tags": ["Users"],
+        "parameters": [
+          {
+            "name": "username",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/users/{name}": {
+      "put": {
+        "description": "Update user based on name",
+        "tags": ["Users"],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/incidents": {
+      "get": {
+        "description": "Get all incidents/cases",
+        "tags": ["Incidents"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/incidents/priority/low": {
+      "get": {
+        "description": "Get all incidents/cases on LOW priority",
+        "parameters": [],
+        "tags": ["Incidents"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/incidents/priority/medium": {
+      "get": {
+        "description": "Get all incidents/cases on MEDIUM priority",
+        "parameters": [],
+        "tags": ["Incidents"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/incidents/priority/high": {
+      "get": {
+        "description": "Get all incidents/cases on HIGH priority",
+        "parameters": [],
+        "tags": ["Incidents"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/incidents/ongoing": {
+      "get": {
+        "description": "Get all incidents/cases on ongoing status",
+        "parameters": [],
+        "tags": ["Incidents"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/incidents/completed": {
+      "get": {
+        "description": "Get all incidents/cases on completed status",
+        "parameters": [],
+        "tags": ["Incidents"],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/incidents/{incident_id}": {
+      "put": {
+        "description": "Update incident based on incident ID",
+        "tags": ["Incidents"],
+        "parameters": [
+          {
+            "name": "incident_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "get": {
+        "description": "Get incident based on incident ID",
+        "tags": ["Incidents"],
+        "parameters": [
+          {
+            "name": "incident_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/incidents/status/{incident_id}": {
+      "put": {
+        "description": "Update incident status based on incident status",
+        "tags": ["Incidents"],
+        "parameters": [
+          {
+            "name": "incident_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/incidents/{assignee}": {
+      "get": {
+        "description": "Get all incidents/cases based on assignee",
+        "tags": ["Incidents"],
+        "parameters": [
+          {
+            "name": "assignee",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/cctv/{cctv_id}": {
+      "get": {
+        "description": "Get CCTV based on CCTV ID",
+        "tags": ["CCTV"],
+        "parameters": [
+          {
+            "name": "cctv_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete CCTV based on CCTV ID",
+        "tags": ["CCTV"],
+        "parameters": [
+          {
+            "name": "cctv_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "description": "Update CCTV Details based on CCTV ID",
+        "tags": ["CCTV"],
+        "parameters": [
+          {
+            "name": "cctv_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/cctv": {
+      "get": {
+        "description": "Get all CCTVs details",
+        "tags": ["CCTV"],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "description": "Add new CCTV details",
+        "tags": ["CCTV"],
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "cctv_name": {
+                  "example": "any"
+                },
+                "cctv_link_address": {
+                  "example": "any"
+                },
+                "cctv_physical_address": {
+                  "example": "any"
+                },
+                "cctv_latitude": {
+                  "example": "any"
+                },
+                "cctv_longitude": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/cctv/incident/{incident_id}": {
+      "get": {
+        "description": "Get CCTV details which captured the incident ",
+        "tags": ["CCTV"],
+        "parameters": [
+          {
+            "name": "incident_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/cctv/location/{incident_id}": {
+      "get": {
+        "description": "Get location of CCTV based on incident ID and place that was detected",
+        "tags": ["CCTV"],
+        "parameters": [
+          {
+            "name": "incident_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
