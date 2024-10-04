@@ -1,10 +1,7 @@
-
-  
-
-# SmartView Mobile Application (TP-Group24)
+# SmartView Mobile Application (by Graymatics Pte Ltd)
 
 
-[![Android Release](https://github.com/UofG-CS/project-TP-group24/actions/workflows/android-release.yml/badge.svg?branch=master)](https://github.com/UofG-CS/project-TP-group24/actions/workflows/android-release.yml)
+[![Android Release](https://play.google.com/store/apps/details?id=com.graymatics.smartview)](https://play.google.com/store/apps/details?id=com.graymatics.smartview)
 
 ## Overview
 
