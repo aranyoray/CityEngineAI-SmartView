@@ -82,33 +82,3 @@ Features of the application include:
 	```
 	/lib/main.dart
 	```
-
-## Contact Details
-If you require any assistance, contact us here:
-
-Team Project - Team 24
-- Poh Kai Boon:
-
-	- SIT Student ID: 2101387 
-
-	- Email: 2101387@sit.singaporetech.edu.sg
-- Tong Kah Jun:
-	
-	- SIT Student ID: 2101694
-	
-	- Email: 2101694@sit.singaporetech.edu.sg
-- Vincent Tan:
-
-	- SIT Student ID: 2101787
-	
-	- Email: 2101787@sit.singaporetech.edu.sg
-- Low Li Pin:
-
-	- SIT Student ID: 2101542
-
-	- Email: 2101542@sit.singaporetech.edu.sg
-- Zamora Zchyrlene Mae Prades 
-	
-	- SIT Student ID: 2101402
-	
-	- Email: 2101402@sit.singaporetech.edu.sg
